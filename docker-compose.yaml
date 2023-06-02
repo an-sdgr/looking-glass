@@ -13,3 +13,59 @@ services:
       - ./config.php:/var/www/html/config.php
     restart: always
 
+  r1:
+    cap_add:
+      - CAP_NET_RAW
+      - NET_ADMIN
+      - SYS_ADMIN
+    image: frrouting/frr
+    volumes:
+      - ./configs/r1.conf:/etc/frr/frr.conf
+      - ./configs/daemons:/etc/frr/daemons
+    networks:
+      net1:
+        ipv4_address: 192.168.1.100
+      net100:
+        ipv4_address: 192.168.100.100
+
+  r2:
+    cap_add:
+      - CAP_NET_RAW
+      - NET_ADMIN
+      - SYS_ADMIN
+    image: frrouting/frr
+    volumes:
+      - ./configs/r2.conf:/etc/frr/frr.conf
+      - ./configs/daemons:/etc/frr/daemons
+    networks:
+      net1:
+        ipv4_address: 192.168.1.200
+      net200:
+        ipv4_address: 192.168.200.200
+
+networks:
+  net1:
+    enable_ipv6: false
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 192.168.1.0/24
+        gateway: 192.168.1.1
+  net100:
+    enable_ipv6: false
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 192.168.100.0/24
+        gateway: 192.168.100.1
+  net200:
+    enable_ipv6: false
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 192.168.200.0/24
+        gateway: 192.168.200.1
+
