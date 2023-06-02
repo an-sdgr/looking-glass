@@ -1,0 +1,15 @@
+version: '3'
+name: "lg-dev"
+
+services:
+  lg:
+    image: gmazoyer/looking-glass:latest
+    #build: ./gobgp
+    #env_file:
+    #  - "dev.env"
+    ports:
+      - 80:80
+    volumes:
+      - ./config.php:/var/www/html/config.php
+    restart: always
+
