@@ -21,7 +21,7 @@ services:
       - CAP_NET_RAW
       - NET_ADMIN
       - SYS_ADMIN
-    image: quay.io/frrouting/frr:8.5.1
+    build: configs/
     volumes:
       - ./configs/r1.conf:/etc/frr/frr.conf
       - ./configs/daemons:/etc/frr/daemons
@@ -36,7 +36,7 @@ services:
       - CAP_NET_RAW
       - NET_ADMIN
       - SYS_ADMIN
-    image: quay.io/frrouting/frr:8.5.1
+    build: configs/
     volumes:
       - ./configs/r2.conf:/etc/frr/frr.conf
       - ./configs/daemons:/etc/frr/daemons
