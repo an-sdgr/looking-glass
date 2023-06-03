@@ -9,6 +9,9 @@ $config['frontpage']['disclaimer'] = 'null';
 $config['contact']['name'] = 'null';
 $config['contact']['mail'] = 'null';
 
+// might want to re-evaluate when in prod
+$config['antispam']['enabled'] = false;
+
 // Routers
 
 $config['routers']['router1']['host'] = 'r1';
