@@ -19,12 +19,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-include('libs/ClassLoader.php');
-
-$loader = new \Composer\Autoload\ClassLoader();
-$loader->addPsr4('phpseclib3\\', 'libs/phpseclib-3.0.14');
-$loader->addPsr4('ParagonIE\ConstantTime\\', 'libs/constant_time_encoding-2.5.0');
-$loader->register();
+require 'vendor/autoload.php';
 
 use phpseclib3\Crypt\PublicKeyLoader;
 use phpseclib3\Net\SSH2;
