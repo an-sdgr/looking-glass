@@ -3,7 +3,8 @@ name: "lg-dev"
 
 services:
   lg:
-    image: gmazoyer/looking-glass:latest
+    #image: gmazoyer/looking-glass:latest
+    build: ./
     #build: ./gobgp
     #env_file:
     #  - "dev.env"
