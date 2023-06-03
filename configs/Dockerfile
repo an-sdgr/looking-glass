@@ -5,15 +5,14 @@ RUN mkdir -p /root/.ssh \
     && chmod 0700 /root/.ssh \
     && apk add openrc openssh \
     && ssh-keygen -A \
-    && echo -e "PasswordAuthentication yes" >> /etc/ssh/sshd_config \
     && mkdir -p /run/openrc \
     && touch /run/openrc/softlevel
 
-RUN echo "root:pass" | chpasswd
+RUN echo "root:lg" | chpasswd
 
-RUN rc-update add sshd default
+RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
-ENTRYPOINT ["/sbin/tini", "--"]
+RUN echo "root:lg" | chpasswd
 
-CMD ["/usr/lib/frr/docker-start"]
+ENTRYPOINT ["sh", "-c", "rc-status; rc-service sshd start; /usr/lib/frr/docker-start"]
 
