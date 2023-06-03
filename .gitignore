@@ -4,7 +4,6 @@
 !/.gitignore
 !/.github/
 
-config.php
 logo.*
 peering_policy.*
 *.db
