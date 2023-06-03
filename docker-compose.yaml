@@ -5,9 +5,6 @@ services:
   lg:
     #image: gmazoyer/looking-glass:latest
     build: ./
-    #build: ./gobgp
-    #env_file:
-    #  - "dev.env"
     ports:
       - 80:80
     volumes:

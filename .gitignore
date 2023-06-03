@@ -4,6 +4,7 @@
 !/.gitignore
 !/.github/
 
+vendor
 logo.*
 peering_policy.*
 *.db
