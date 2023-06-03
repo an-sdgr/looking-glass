@@ -318,8 +318,8 @@ final class LookingGlass {
       print($this->frontpage['additional_html_header']);
     }
     print('<title>'.htmlentities($this->frontpage['title']).'</title>');
-    print('<link href="libs/bootstrap-5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">');
-    print('<link href="libs/bootstrap-icons-1.10.3/bootstrap-icons.css" rel="stylesheet">');
+    print('<link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">');
+    print('<link href="vendor/twbs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">');
     print('<link href="'.$this->frontpage['css'].'" rel="stylesheet">');
     print('</head>');
     print('<body class="d-flex flex-column h-100">');
@@ -335,8 +335,8 @@ final class LookingGlass {
     print('</div>');
     print('</main>');
     print('</body>');
-    print('<script src="libs/jquery-3.6.3.min.js"></script>');
-    print('<script src="libs/bootstrap-5.3.0-alpha1/js/bootstrap.min.js"></script>');
+    print('<script src="vendor/components/jquery/jquery.min.js"></script>');
+    print('<script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>');
     print('<script src="js/looking-glass.js"></script>');
     $this->captcha->render_script();
     print('</html>');
