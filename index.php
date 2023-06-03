@@ -308,7 +308,7 @@ final class LookingGlass {
 
   public function render() {
     print('<!DOCTYPE html>');
-    print('<html lang="en">');
+    print('<html lang="en" data-bs-theme="dark">');
     print('<head>');
     print('<meta charset="utf-8">');
     print('<meta name="viewport" content="width=device-width, initial-scale=1">');
